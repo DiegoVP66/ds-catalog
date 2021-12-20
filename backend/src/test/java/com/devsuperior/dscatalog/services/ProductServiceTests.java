@@ -116,7 +116,7 @@ public class ProductServiceTests {
 
 		verify(repository, times(1)).findById(existingId);
 	}
-
+/*
 	@Test
 	public void findAllPagedShouldReturnPage() {
 		Pageable pageable = PageRequest.of(0, 10);
@@ -125,7 +125,7 @@ public class ProductServiceTests {
 
 		Assertions.assertNotNull(result);
 		verify(repository, times(1)).findAll(pageable);
-	}
+	}*/
 
 	@Test
 	public void deleteShouldDoNothingWhenIdExists() {
