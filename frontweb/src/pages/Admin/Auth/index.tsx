@@ -1,5 +1,6 @@
 import {ReactComponent as Banner} from 'assets/images/banner.svg';
 import { Route, Switch } from 'react-router-dom';
+import './styles.css';
 
 const Auth = () => {
   return (
