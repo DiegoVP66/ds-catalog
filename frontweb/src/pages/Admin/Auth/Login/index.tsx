@@ -30,7 +30,7 @@ const Login = () => {
         console.log('TOKEN GERADO: ' + token);
         setHasError(false);
         console.log('SUCESSO', response);
-        history.push("/admin");
+        history.push('/admin');
       })
       .catch((error) => {
         setHasError(true);
