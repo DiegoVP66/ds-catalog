@@ -1,9 +1,6 @@
-ul {
+.admin-nav-items-container {
   display: flex;
   justify-content: space-around;
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
 }
 
 .admin-nav-container {
@@ -34,14 +31,14 @@ ul {
   margin-bottom: 0;
 }
 
-@media(min-width: 768px) {
-    .admin-nav-item {
-        min-width: 220px;
-    }
+@media (min-width: 768px) {
+  .admin-nav-item {
+    min-width: 220px;
+  }
 }
 
 @media (min-width: 1200px) {
-  ul {
+  .admin-nav-items-container {
     justify-content: unset;
     flex-direction: column;
   }
