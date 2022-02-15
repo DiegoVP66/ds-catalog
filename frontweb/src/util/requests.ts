@@ -34,7 +34,7 @@ export const requestBackendLogin = (loginData: LoginData) => {
   });
 };
 
-export const requestBackend = (config: AxiosRequestConfig) => {
+export const  requestBackend = (config: AxiosRequestConfig) => {
   const headers = config.withCredentials
     ? {
         ...config.headers,
