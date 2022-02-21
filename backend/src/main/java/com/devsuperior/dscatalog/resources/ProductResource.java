@@ -17,9 +17,11 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import com.devsuperior.dscatalog.dto.ProductDTO;
+import com.devsuperior.dscatalog.dto.UriDTO;
 import com.devsuperior.dscatalog.services.ProductService;
 
 @RestController
@@ -29,17 +31,14 @@ public class ProductResource {
 	@Autowired
 	private ProductService service;
 
-	
 	@GetMapping
 	public ResponseEntity<Page<ProductDTO>> findAll(
-	              @RequestParam(value = "categoryId", defaultValue = "0") Long categoryId,
-	              @RequestParam(value = "name", defaultValue = "") String name,
-	              Pageable pageable) {
-	       
-	       Page<ProductDTO> list = service.findAllPaged(categoryId, name.trim(), pageable);             
-	       return ResponseEntity.ok().body(list);
-	}
+			@RequestParam(value = "categoryId", defaultValue = "0") Long categoryId,
+			@RequestParam(value = "name", defaultValue = "") String name, Pageable pageable) {
 
+		Page<ProductDTO> list = service.findAllPaged(categoryId, name.trim(), pageable);
+		return ResponseEntity.ok().body(list);
+	}
 
 	@GetMapping(value = "/{id}")
 	public ResponseEntity<ProductDTO> findById(@PathVariable Long id) {
@@ -52,6 +51,12 @@ public class ProductResource {
 		dto = service.insert(dto);
 		URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(dto.getId()).toUri();
 		return ResponseEntity.created(uri).body(dto);
+	}
+	
+	@PostMapping(value = "/image")
+	public ResponseEntity<UriDTO> uploadImage(@RequestParam("file") MultipartFile file) {
+		UriDTO dto = service.uploadFile(file);
+		return ResponseEntity.ok().body(dto);
 	}
 
 	@PutMapping(value = "/{id}")
