@@ -1,0 +1,37 @@
+.category-form-container {
+  display: flex;
+  align-items: center;
+  padding-left: 30px;
+  height: 200px;
+  max-width: 900px;
+}
+
+.category-form-buttons-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+@media (min-width: 576px) {
+  .category-container {
+    display: flex;
+    padding: 10px;
+  }
+  .input-box {
+    width: 280px;
+    margin-top: 5px;
+  }
+  .category-form-buttons-container {
+    margin-top: 5px;
+    margin-left: 5px;
+  }
+  .category-form-buttons-container button:first-of-type {
+    margin-right: 10px;
+  }
+}
+
+@media (min-width: 1400px) {
+  .category-form-container {
+    height: 300px;
+  }
+}

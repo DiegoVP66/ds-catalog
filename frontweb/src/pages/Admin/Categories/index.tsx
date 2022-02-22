@@ -1,5 +1,6 @@
 import { Route, Switch } from 'react-router-dom';
 import CategoriesList from './CategoriesList';
+import CategoryForm from './CategoryForm';
 
 const Categories = () => {
   return (
@@ -8,7 +9,7 @@ const Categories = () => {
         <CategoriesList />
       </Route>
       <Route path="/admin/categories/:categoryId">
-        <h1>Category Form</h1>
+        <CategoryForm />
       </Route>
     </Switch>
   );
