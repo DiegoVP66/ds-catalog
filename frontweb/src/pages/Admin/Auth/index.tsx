@@ -1,6 +1,7 @@
-import {ReactComponent as Banner} from 'assets/images/banner.svg';
+import { ReactComponent as Banner } from 'assets/images/banner.svg';
 import { Route, Switch } from 'react-router-dom';
 import Login from './Login';
+import Register from './Register';
 import './styles.css';
 
 const Auth = () => {
@@ -12,21 +13,20 @@ const Auth = () => {
           Faça parte do nosso catálogo de divulgação e aumente a venda dos seus
           produtos.
         </p>
-        <Banner/>
+        <Banner />
       </div>
       <div className="auth-form-container">
-          <Switch>
-              <Route path="/admin/auth/login">
-                  <Login />
-              </Route>
-              <Route path="/admin/auth/signup">
-                  <h1>Card de signup</h1>
-              </Route>
-              <Route path="/admin/auth/recover">
-                  <h1>Card de recover</h1>
-              </Route>
-          </Switch>
-
+        <Switch>
+          <Route path="/admin/auth/login">
+            <Login />
+          </Route>
+          <Route path="/admin/auth/register">
+            <Register />
+          </Route>
+          <Route path="/admin/auth/recover">
+            <h1>Card de recover</h1>
+          </Route>
+        </Switch>
       </div>
     </div>
   );

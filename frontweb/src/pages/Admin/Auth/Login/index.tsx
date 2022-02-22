@@ -105,7 +105,7 @@ const Login = () => {
         <div className="signup-container">
           <span className="not-registered">Não tem Cadastro?</span>
           <Link to="/admin/auth/register" className="login-link-register">
-            CADASTRAR
+            <span>Cadastro</span>
           </Link>
         </div>
       </form>
