@@ -2,8 +2,22 @@
   display: none;
 }
 
+.category-list-container {
+  display: flex;
+  flex-direction: column;
+}
+
 @media (min-width: 576px) {
   .new-category-text-button {
     display: unset;
+  }
+
+  .category-list {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+  }
+  .category-list-filter {
+    margin-left: 10px;
   }
 }

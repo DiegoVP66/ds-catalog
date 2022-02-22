@@ -28,9 +28,6 @@
   .category-form-buttons-container button:first-of-type {
     margin-right: 10px;
   }
-  .invalid-text {
-    border: 1px solid red;
-  }
 }
 
 @media (min-width: 1400px) {

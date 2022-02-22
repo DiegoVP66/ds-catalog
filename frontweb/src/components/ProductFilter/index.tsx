@@ -6,21 +6,21 @@ import { Category } from 'types/category';
 import { requestBackend } from 'util/requests';
 import './styles.css';
 
-export type DefaultFilterData = {
+export type ProductFilterData = {
   name: string;
   category: Category | null;
 };
 
 type Props = {
-  onSubmitFilter: (data: DefaultFilterData) => void;
+  onSubmitFilter: (data: ProductFilterData) => void;
 };
 
-const DefaultFilter = ({ onSubmitFilter }: Props) => {
+const ProductFilter = ({ onSubmitFilter }: Props) => {
   const [selectCategories, setSelectCategories] = useState<Category[]>([]);
   const { register, handleSubmit, setValue, getValues, control } =
-    useForm<DefaultFilterData>();
+    useForm<ProductFilterData>();
 
-  const onSubmit = (formData: DefaultFilterData) => {
+  const onSubmit = (formData: ProductFilterData) => {
     onSubmitFilter(formData);
   };
 
@@ -32,7 +32,7 @@ const DefaultFilter = ({ onSubmitFilter }: Props) => {
   const handleChangeCategory = (value: Category) => {
     setValue('category', value);
 
-    const obj: DefaultFilterData = {
+    const obj: ProductFilterData = {
       name: getValues('name'),
       category: getValues('category'),
     };
@@ -92,4 +92,4 @@ const DefaultFilter = ({ onSubmitFilter }: Props) => {
   );
 };
 
-export default DefaultFilter;
+export default ProductFilter;

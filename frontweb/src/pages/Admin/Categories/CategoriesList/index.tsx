@@ -47,13 +47,15 @@ const CategoriesList = () => {
   }, [getCategories]);
 
   return (
-    <div>
-      <Link to="/admin/categories/create">
-        <button className="btn btn-primary text-white btn-crud-add mb-2">
-          ADICIONAR{' '}
-          <span className="new-category-text-button">NOVA CATEGORIA</span>
-        </button>
-      </Link>
+    <div className="category-list-container">
+      <div className="category-list">
+        <Link to="/admin/categories/create">
+          <button className="btn btn-primary text-white btn-crud-add mb-2">
+            ADICIONAR{' '}
+            <span className="new-category-text-button">NOVA CATEGORIA</span>
+          </button>
+        </Link>
+      </div>
 
       {page?.content.map((category) => (
         <div key={category.id}>

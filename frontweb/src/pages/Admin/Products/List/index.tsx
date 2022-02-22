@@ -1,6 +1,6 @@
 import { AxiosRequestConfig } from 'axios';
 import Pagination from 'components/Pagination';
-import ProductFilter, { DefaultFilterData } from 'components/Filter';
+import ProductFilter, { ProductFilterData } from 'components/ProductFilter';
 import ProductCrudCard from 'pages/Admin/Products/ProductCrudCard';
 import { useCallback, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
@@ -11,7 +11,7 @@ import './styles.css';
 
 type ControlComponentsData = {
   activePage: number;
-  filterData: DefaultFilterData;
+  filterData: ProductFilterData;
 };
 
 const List = () => {
@@ -30,7 +30,7 @@ const List = () => {
     });
   };
 
-  const handleSubmitFilter = (data: DefaultFilterData) => {
+  const handleSubmitFilter = (data: ProductFilterData) => {
     setControlComponentsData({ activePage: 0, filterData: data });
   };
 

@@ -1,13 +1,12 @@
 import { Link, useHistory, useLocation } from 'react-router-dom';
 import ButtonIcon from 'components/ButtonIcon';
 import { useForm } from 'react-hook-form';
-
 import { useContext, useState } from 'react';
-import './styles.css';
 import { AuthContext } from 'AuthContext';
 import { requestBackendLogin } from 'util/requests';
 import { saveAuthData } from 'util/storage';
 import { getTokenData } from 'util/token';
+import './styles.css';
 
 type CredentialsDTO = {
   username: string;
