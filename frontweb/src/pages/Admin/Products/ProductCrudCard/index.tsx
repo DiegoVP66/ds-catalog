@@ -12,8 +12,6 @@ type Props = {
 };
 
 const ProductCrudCard = ({ product, onDelete }: Props) => {
-  
-  
   const handleDelete = (productId: number) => {
     if (!window.confirm('Tem certeza que deseja deletar?')) {
       return;
