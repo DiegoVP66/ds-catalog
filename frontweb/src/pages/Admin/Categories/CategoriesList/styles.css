@@ -1,0 +1,9 @@
+.new-category-text-button {
+  display: none;
+}
+
+@media (min-width: 576px) {
+  .new-category-text-button {
+    display: unset;
+  }
+}

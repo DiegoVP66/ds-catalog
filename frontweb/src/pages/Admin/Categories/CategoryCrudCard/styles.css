@@ -9,6 +9,8 @@
 .category-name {
   display: flex;
   align-items: center;
+  color: #263238;
+  font-weight: 700;
 }
 
 .category-button-container {
