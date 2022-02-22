@@ -4,6 +4,7 @@ import Navbar from './Navbar';
 import Users from './Users';
 import './styles.css';
 import Products from './Products';
+import Categories from './Categories';
 
 const Admin = () => {
   return (
@@ -15,7 +16,7 @@ const Admin = () => {
             <Products />
           </PrivateRoute>
           <PrivateRoute path="/admin/categories">
-            <h1>Category CRUD</h1>
+            <Categories />
           </PrivateRoute>
           <PrivateRoute path="/admin/users" roles={['ROLE_ADMIN']}>
             <Users />
